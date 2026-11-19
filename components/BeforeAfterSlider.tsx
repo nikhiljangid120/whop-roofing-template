@@ -138,3 +138,4 @@ export function BeforeAfterSlider({ onOpenEstimate }: { onOpenEstimate: () => vo
     </section>
   );
 }
+
