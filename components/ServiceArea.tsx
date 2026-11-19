@@ -123,3 +123,4 @@ export function ServiceArea({ onOpenEstimate }: { onOpenEstimate: () => void }) 
     </section>
   );
 }
+

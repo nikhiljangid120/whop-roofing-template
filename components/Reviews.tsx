@@ -34,7 +34,7 @@ export function Reviews() {
           {roofingConfig.reviews.map((rev, idx) => (
             <div
               key={idx}
-              className="p-8 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl flex flex-col justify-between space-y-4 hover:border-slate-700 transition-colors"
+              className="p-8 rounded-3xl bg-slate-900 border border-slate-800 shadow-xl flex flex-col justify-between space-y-6 hover:border-slate-700 transition-all duration-300"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -43,7 +43,7 @@ export function Reviews() {
                       <Star key={i} className="w-4 h-4 fill-amber-400" />
                     ))}
                   </div>
-                  <span className="text-[11px] text-slate-500">{rev.date}</span>
+                  <span className="text-[11px] text-slate-500 font-mono">{rev.date}</span>
                 </div>
 
                 <h4 className="font-bold text-white text-base leading-snug">
@@ -56,13 +56,20 @@ export function Reviews() {
               </div>
 
               <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                <div>
-                  <span className="font-bold text-white text-xs block">{rev.author}</span>
-                  <span className="text-[11px] text-slate-400">{rev.location}</span>
+                <div className="flex items-center gap-3">
+                  <img
+                    src={rev.avatar}
+                    alt={rev.author}
+                    className="w-10 h-10 rounded-full object-cover border border-slate-700"
+                  />
+                  <div>
+                    <span className="font-bold text-white text-xs block">{rev.author}</span>
+                    <span className="text-[11px] text-slate-400">{rev.location}</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-1 text-[10px] text-emerald-400 bg-emerald-950/70 border border-emerald-800 px-2 py-0.5 rounded font-mono">
+                <div className="flex items-center gap-1 text-[10px] text-emerald-400 bg-emerald-950/70 border border-emerald-800 px-2.5 py-1 rounded-full font-mono">
                   <CheckCircle2 className="w-3 h-3" />
-                  <span>Verified Customer</span>
+                  <span>Verified</span>
                 </div>
               </div>
             </div>

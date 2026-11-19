@@ -122,3 +122,4 @@ export function PricingPlans({ onSelectPlan, onOpenInvoices }: PricingPlansProps
     </section>
   );
 }
+

@@ -1,8 +1,8 @@
 /**
- * Roofing Company Configuration Template
+ * Summit Ridge Roofing & Restoration - Centralized Configuration
  * 
- * To rebrand this template for any US roofing contractor, simply update this single configuration file.
- * No structural code changes are required.
+ * Rebrandable US Roofing Template for Whop Websites.
+ * Changing any values here automatically updates the entire site.
  */
 
 export interface ServiceItem {
@@ -13,7 +13,8 @@ export interface ServiceItem {
   priceDisplay: string;
   numericPrice: number;
   planId?: string;
-  iconName: "hammer" | "shield" | "drone" | "wrench" | "sun";
+  imageUrl: string;
+  iconName: "hammer" | "shield" | "drone";
   badges: string[];
   features: string[];
 }
@@ -24,7 +25,6 @@ export interface PricingPlan {
   title: string;
   subtitle: string;
   price: number;
-  period?: string;
   popular?: boolean;
   type: "inspection" | "deposit" | "flat_rate";
   setupIntentRequired?: boolean;
@@ -33,10 +33,10 @@ export interface PricingPlan {
 }
 
 export const roofingConfig = {
-  // Brand & Company Information
   company: {
     name: "Summit Ridge Roofing & Restoration",
-    tagline: "High-Ticket Commercial & Residential Roofing Done Right",
+    shortName: "Summit Ridge",
+    tagline: "High-Ticket Commercial & Architectural Roofing Systems",
     licenseNumber: "USA-ROOF-84920-LIC",
     phone: "(800) 555-ROOF",
     phoneRaw: "+18005557663",
@@ -48,10 +48,9 @@ export const roofingConfig = {
       zip: "75201",
       country: "United States",
     },
-    hours: "Mon - Sat: 7:00 AM - 7:00 PM (24/7 Emergency Tarping)",
+    hours: "Mon - Sat: 7:00 AM - 7:00 PM (24/7 Emergency Tarping Dispatch)",
   },
 
-  // Trust Metrics & Social Proof
   trust: {
     yearsInBusiness: 18,
     roofsCompleted: "3,800+",
@@ -67,24 +66,33 @@ export const roofingConfig = {
     warranty: "Lifetime Shingle Warranty + 25-Year Workmanship Guarantee",
   },
 
-  // Financing Callout
   financing: {
-    headline: "0% APR Financing Available for 12 to 24 Months",
-    subheadline: "Powered natively by Whop Payments. Prequalify in 60 seconds with zero credit score impact.",
+    headline: "0% APR Financing for 12 to 24 Months via Whop",
+    subheadline: "Spread your roofing investment into predictable monthly installments. Prequalify in 60 seconds with zero credit score impact.",
     providers: ["Klarna", "Splitit", "Afterpay", "Affirm"],
-    badge: "Flexible Payment Options Available at Checkout",
+    badge: "Flexible Buy-Now-Pay-Later Surfaced Natively at Checkout",
   },
 
-  // Core Services
+  // Imagery
+  images: {
+    hero: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80",
+    repair: "https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=800&q=80",
+    replacement: "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=800&q=80",
+    drone: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=800&q=80",
+    beforeDamage: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+    afterRestored: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+  },
+
   services: [
     {
       id: "roof-repair",
       name: "Emergency Roof Repair & Storm Restoration",
-      shortDescription: "Fast, certified leak repairs, wind damage restoration, and emergency shingle replacement.",
+      shortDescription: "Certified leak repairs, wind damage restoration, and emergency shingle replacement.",
       fullDescription: "From hail strikes and missing architectural shingles to persistent flashing leaks around chimneys, our crews restore roof integrity before structural wood rot occurs.",
       priceDisplay: "Custom Quote or $299 Tune-Up",
       numericPrice: 299,
       planId: "plan_tuneup_299",
+      imageUrl: "https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=800&q=80",
       iconName: "hammer",
       badges: ["24/7 Dispatch", "Insurance Approved"],
       features: [
@@ -97,11 +105,12 @@ export const roofingConfig = {
     {
       id: "roof-replacement",
       name: "Full Roof Replacement & Architectural Systems",
-      shortDescription: "Complete tear-off and installation of high-performance shingle, standing-seam metal, or tile systems.",
-      fullDescription: "Our flagship high-ticket roofing package. Built to withstand 130 mph hurricane winds, severe hail, and intense UV radiation. Backed by manufacturer lifetime warranties.",
+      shortDescription: "Complete tear-off and installation of high-performance shingle, metal, or tile systems.",
+      fullDescription: "Our flagship high-ticket roofing package. Built to withstand 130 mph winds, severe hail, and intense UV radiation. Backed by manufacturer lifetime warranties.",
       priceDisplay: "$500 Project Deposit to Lock Crew",
       numericPrice: 500,
       planId: "plan_deposit_500",
+      imageUrl: "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=800&q=80",
       iconName: "shield",
       badges: ["High-Ticket", "Lifetime Warranty", "Deposit Plan"],
       features: [
@@ -120,6 +129,7 @@ export const roofingConfig = {
       priceDisplay: "$149 One-Time Inspection",
       numericPrice: 149,
       planId: "plan_inspection_149",
+      imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=800&q=80",
       iconName: "drone",
       badges: ["Instant Booking", "100% Credited to Work"],
       features: [
@@ -131,7 +141,6 @@ export const roofingConfig = {
     },
   ] as ServiceItem[],
 
-  // Three Real Whop Plans
   plans: [
     {
       id: "inspection",
@@ -185,7 +194,6 @@ export const roofingConfig = {
     },
   ] as PricingPlan[],
 
-  // Service Area
   serviceArea: {
     state: "Texas",
     primaryCounty: "Dallas & Tarrant Counties",
@@ -199,13 +207,13 @@ export const roofingConfig = {
     ],
   },
 
-  // Customer Reviews
   reviews: [
     {
       author: "David M.",
       location: "Southlake, TX",
       rating: 5,
       date: "2 weeks ago",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
       headline: "Seamless deposit, financing, and flawless roof replacement!",
       content: "After hail took out our roof, Summit Ridge inspected via drone and sent an estimate in 24 hours. Paid the $500 deposit on Whop using Klarna 0% financing. They completed the 45-square roof in one day and billed the remaining balance through Whop Invoices smoothly.",
     },
@@ -214,6 +222,7 @@ export const roofingConfig = {
       location: "Frisco, TX",
       rating: 5,
       date: "1 month ago",
+      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80",
       headline: "The $149 inspection saved us thousands with insurance",
       content: "The insurance adjuster initially denied our wind damage claim. Summit Ridge's $149 inspection report had high-res thermal photos that overturned the denial. Best $149 we ever spent, and they even credited it back!",
     },
@@ -222,15 +231,13 @@ export const roofingConfig = {
       location: "Dallas, TX",
       rating: 5,
       date: "2 months ago",
+      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
       headline: "Emergency tarping within 3 hours during severe storm",
       content: "Water was dripping into our guest bedroom at 8 PM. Booked the $299 flat-rate emergency service on their site and a crew arrived with tarps and silicone sealant before midnight. Saved our drywall.",
     },
   ],
 
-  // Whop Platform Configuration
   whop: {
     companyId: process.env.NEXT_PUBLIC_WHOP_COMPANY_ID || "biz_roofing_demo",
-    stripeOrWhopTestMode: true,
   },
 };
-

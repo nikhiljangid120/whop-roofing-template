@@ -5,6 +5,8 @@ import { roofingConfig, PricingPlan } from "@/config/roofing.config";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
+import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
+import { CostEstimator } from "@/components/CostEstimator";
 import { PricingPlans } from "@/components/PricingPlans";
 import { FinancingBanner } from "@/components/FinancingBanner";
 import { ServiceArea } from "@/components/ServiceArea";
@@ -60,6 +62,15 @@ export default function Home() {
 
       {/* Services Grid (Repair, Replacement, Inspection) */}
       <Services
+        onSelectPlan={handleSelectPlan}
+        onOpenEstimate={() => setIsEstimateOpen(true)}
+      />
+
+      {/* Before / After Storm Damage Interactive Slider */}
+      <BeforeAfterSlider onOpenEstimate={() => setIsEstimateOpen(true)} />
+
+      {/* Interactive Roof Cost & Financing Estimator */}
+      <CostEstimator
         onSelectPlan={handleSelectPlan}
         onOpenEstimate={() => setIsEstimateOpen(true)}
       />

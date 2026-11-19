@@ -69,3 +69,4 @@ export function FinancingBanner({ onOpenEstimate }: { onOpenEstimate: () => void
     </section>
   );
 }
+
